@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Game</title>
+</head>
+<body>
+    <div class="content">
+        <div class="title">
+            <h2>ROCK PAPER SCISSOR</h2>
+        </div> 
+        <div class="line"></div>
+        <div class="play">
+            <h3 id="comp">-</h3>
+            <h3 id="result">-</h3>
+        </div>
+        <div class="pictures">
+            <img id="scissor" src="img/sci.png">
+            <img id="rock" src="img/roc.png">
+            <img id="paper" src="img/pap.png">
+        </div>
+        <br>
+        <button class="btn" onclick="reset()">Play Again</button>
+    </div>
+</body>
+<script>
+    const rock = document.querySelector('#rock');
+    const paper = document.querySelector('#paper');
+    const scissor = document.querySelector('#scissor');
+    let resul = document.getElementById('result');
+    let comp = document.getElementById('comp');
+
+    rock.addEventListener('click', function(){
+        const choices = ['r','p','s'];
+        let computer = choices[Math.floor(choices.length * Math.random())];
+
+        if(computer === 's'){
+            comp.textContent = '"Computer: SCISSOR"';
+        }else if(computer === 'p'){
+        comp.textContent = '"Computer: PAPER"';
+        }else{
+        comp.textContent = '"Computer:ROCK"';
+        }
+        
+        if(computer === choices[0]){
+            resul.textContent = "It's a tie!";
+        }else if(computer === choices[1]){
+            resul.textContent = 'Pilde ang ferson!';
+        }else{
+            resul.textContent = 'Daog ang ferson!';
+        }
+        console.log(computer);
+    }, false);
+    paper.addEventListener('click', function(){
+        const choices = ['r','p','s'];
+        let computer = choices[Math.floor(choices.length * Math.random())];
+        
+        if(computer === 's'){
+            comp.textContent = '"Computer: SCISSOR"';
+        }else if(computer === 'p'){
+        comp.textContent = '"Computer: PAPER"';
+        }else{
+        comp.textContent = '"Computer:ROCK"';
+        }
+        
+        if(computer === choices[1]){
+            resul.textContent = "It's a tie!";
+        }else if(computer === choices[2]){
+            resul.textContent = 'Pilde ang ferson!';
+        }else{
+            resul.textContent = 'Daog ang ferson!';
+        }
+        console.log(computer);
+    }, false);
+    scissor.addEventListener('click', function(){
+        const choices = ['r','p','s'];
+        let computer = choices[Math.floor(choices.length * Math.random())];
+        
+        if(computer === 's'){
+            comp.textContent = '"Computer: SCISSOR"';
+        }else if(computer === 'p'){
+        comp.textContent = '"Computer: PAPER"';
+        }else{
+        comp.textContent = '"Computer:ROCK"';
+        }
+        
+        if(computer === choices[2]){
+            resul.textContent = "It's a tie!";
+        }else if(computer === choices[0]){
+            resul.textContent = 'Pilde ang ferson!';
+        }else{
+            resul.textContent = 'Daog ang ferson!';
+        }
+        console.log(computer);
+    }, false);
+
+    function reset() {
+        comp.textContent = '-';
+        resul.textContent = '-';
+    }
+</script>
+</html>
+</html>
+
+
